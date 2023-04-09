@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete </title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<style> @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --main-color:#2980b9;
+    --bg-color-1:#eee;
+    --bg-color-2:#fff;
+    --text-color-1:#444;
+    --text-color-2:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+body{
+    background:var(--bg-color-1);
+}
+
+body.active{
+    --bg-color-1:#222;
+    --bg-color-2:#333;
+    --text-color-1:#fff;
+    --text-color-2:#eee;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.3);
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.btn{
+    margin-top: .5rem;
+    display: inline-block;
+    padding:.9rem 3.5rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--main-color);
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+    opacity: .8;
+}
+
+.heading{
+    text-align: center;
+    color:var(--text-color-1);
+    text-transform: uppercase;
+    font-size: 4rem;
+    padding-bottom: 2rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background:var(--bg-color-2);
+    padding:1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--text-color-1);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    color:var(--text-color-1);
+    background:var(--bg-color-1);
+    margin-left: .5rem;
+    cursor: pointer;
+}
+
+.header .icons div:hover{
+    background:var(--main-color);
+    color:#fff;
+}
+
+.header .navbar{
+    position: absolute;
+    top:115%; right: 9%;
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width:25rem;
+    padding:1rem;
+    display: none;
+}
+
+.header .navbar.active{
+    display: block;
+}
+
+.header .navbar a{
+    font-size: 2rem;
+    padding:1rem;
+    color:var(--text-color-1);
+    display: block;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+    padding-left: 2rem;
+}
+
+.header .search-form{
+    position: absolute;
+    top:115%; right: 9%;
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    width:50rem;
+    padding:1rem;
+    display: none;
+}
+
+.header .search-form.active{    
+    display: flex;
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    background:none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--text-color-1);
+    padding:1rem;
+}
+
+.header .search-form label{
+    color:var(--text-color-1);
+    font-size: 2rem;
+    padding-right: .8rem;
+    cursor: pointer;
+}
+
+.header .search-form label:hover{
+    color:var(--main-color);
+}
+
+.header .colors-palette{
+    position: absolute;
+    top:115%; right: 9%;
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding:1rem;
+    text-align: center;
+    width: 20rem;
+    display: none;
+}
+
+.header .colors-palette.active{
+    display: block;
+}
+
+.header .colors-palette h3{
+    padding:.7rem;
+    font-size: 2rem;
+    color:var(--text-color-1);
+}
+
+.header .colors-palette .colors{
+    display: flex;
+    flex-wrap: wrap;
+    padding:.7rem;
+    justify-content: center;
+    gap:1rem;
+}
+
+.header .colors-palette .colors .color{
+    border-radius: .5rem;
+    cursor: pointer;
+    height: 4.5rem;
+    width: 4.5rem;
+}
+
+.home{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding-top: 8rem;
+}
+
+.home .content{
+    border-radius: .5rem;
+    max-width: 55rem;
+    padding:3rem 5rem;
+    background: var(--bg-color-2);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.home .content h3{
+    color:var(--text-color-1);
+    font-size: 3.5rem;
+}
+
+.home .content p{
+    color:var(--text-color-2);
+    font-size: 1.5rem;
+    padding:1.5rem 0;
+    line-height: 1.9;
+}
+
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:1.5rem;
+}
+
+.services .box-container .box{
+    padding:3rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background: var(--bg-color-2);
+    position: relative;
+}
+
+.services .box-container .box span{
+    font-size: 6rem;
+    color:var(--text-color-2);
+    font-weight: bolder;
+    opacity: .2;
+    position: absolute;
+    top:1rem; right: 2.5rem;
+}
+
+.services .box-container .box i{
+    height: 5.5rem;
+    line-height: 5.5rem;
+    width: 5.5rem;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color:#fff;
+    background: var(--main-color);
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+.services .box-container .box h3{
+    color:var(--text-color-1);
+    font-size: 2.5rem;
+    padding:1rem 0;
+}
+
+.services .box-container .box p{
+    color:var(--text-color-2);
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.gallery .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:1.5rem;
+}
+
+.gallery .box-container .box{
+    height: 25rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    border:1rem solid var(--bg-color-2);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery .box-container .box img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.gallery .box-container .box .content{
+    position: absolute;
+    top:0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--bg-color-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    transform: scale(0);
+}
+
+.gallery .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: var(--text-color-1);
+    padding-bottom: .5rem;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition-delay: .3s;
+}
+
+.gallery .box-container .box .content span{
+    font-size: 1.5rem;
+    color: var(--text-color-2);
+    transform: translateY(5rem);
+    opacity: 0;
+    transition-delay: .3s;
+}
+
+.gallery .box-container .box:hover .content{
+    transform: scale(1);
+}
+
+.gallery .box-container .box:hover .content h3,
+.gallery .box-container .box:hover .content span{
+    transform: translateY(0rem);
+    opacity: 1;
+}
+
+.pricing .box-contanier{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.pricing .box-contanier .box{
+    background: var(--bg-color-2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding:2rem 0;
+}
+
+.pricing .box-contanier .box span{
+    font-size: 7rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    color:var(--main-color);
+}
+
+.pricing .box-contanier .box:nth-child(2) span{
+    transform: rotate(-45deg);
+}
+
+.pricing .box-contanier .box h3{
+    background: var(--main-color);
+    color:#fff;
+    padding:1rem 0;
+    margin:1rem 0;
+    font-size: 2.5rem;
+}
+
+.pricing .box-contanier .box ul{
+    padding:1rem 0;
+    list-style: none;
+}
+
+.pricing .box-contanier .box ul li{
+    padding:.7rem 0;
+    font-size: 1.7rem;
+    color:var(--text-color-2);
+}
+
+.pricing .box-contanier .box ul li i{
+    padding-right: .5rem;
+    color:var(--main-color);
+}
+
+.pricing .box-contanier .box .price{
+    color:var(--text-color-1);
+    font-weight: bolder;
+    font-size: 5rem;
+}
+
+.pricing .box-contanier .box .price i{
+    color:var(--text-color-2);
+    font-size: 1.5rem;
+    padding:0 .5rem;
+    font-weight: lighter;
+}
+
+.review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.review .box-container .box{
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background: var(--bg-color-2);
+    padding:3.5rem;
+}
+
+.review .box-container .box .user{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.review .box-container .box .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right:1rem;
+}
+
+.review .box-container .box .user .fa-quote-right{
+    color:var(--main-color);
+    font-size: 4rem;
+    margin-left: auto;
+}
+
+.review .box-container .box .user .info h3{
+    color:var(--text-color-1);
+    font-size: 2rem;
+    padding-bottom: .5rem;
+}
+
+.review .box-container .box .user .info .stars i{
+    color:var(--main-color);
+    font-size: 1.3rem;
+}
+
+.review .box-container .box .user .info .stars span{
+    color:var(--text-color-2);
+    font-size: 1.3rem;
+}
+
+.review .box-container .box p{
+    color:var(--text-color-2);
+    font-size: 1.6rem;
+    line-height: 1.7;
+    padding-top: 1rem;
+}
+
+.contact form{
+    max-width: 70rem;
+    margin:1rem auto;
+    text-align: center;
+}
+
+.contact form .inputBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .inputBox input,
+.contact form textarea{
+    width: 100%;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--text-color-1);
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    margin:.7rem 0;
+    text-transform: none;
+}
+
+.contact form .inputBox input{
+    width:49%;
+}
+
+.footer{
+     background:var(--bg-color-2);
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--text-color-1);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--text-color-2);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--main-color);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 1.5rem;
+}
+
+.footer .credit{
+    font-size: 2rem;
+    padding:2rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    color:var(--text-color-1);
+}
+
+.footer .credit span{
+    color:var(--main-color);
+}
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }    
+
+    .header{
+        padding:1.5rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .header .navbar{
+        right: 2rem;
+    }
+
+    .header .search-form{
+        right: 2rem;
+        width:90%;
+    }
+
+    .header .colors-palette{
+        right: 2rem;
+    }
+
+    .home .content{
+        padding:3rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }   
+
+    .contact form .inputBox input{
+        width:100%;
+    }
+
+}
+</style>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">IPTV HN</a>
+
+    <div class="icons">
+        <div class="fas fa-moon" id="theme-btn"></div>
+        <div class="fas fa-palette" id="color-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#services">services</a>
+        <a href="#gallery">gallery</a>
+        <a href="#pricing">pricing</a>
+        <a href="#review">review</a>
+    </nav>
+
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+          
+           <div class="colors-palette">
+        <h3>choose color</h3>
+        <div class="colors">
+            <div class="color" style="background:#2980b9"></div>
+            <div class="color" style="background: #27ae60;"></div>
+            <div class="color" style="background: #e74c3c;"></div>
+            <div class="color" style="background: #8e44ad;"></div>
+            <div class="color" style="background: #B33771;"></div>
+            <div class="color" style="background: #0fb9b1;"></div>
+            <div class="color" style="background: #ff9f1a;"></div>
+            <div class="color" style="background: #e84393;"></div>
+            <div class="color" style="background: #17c0eb;"></div>
+        </div>
+    </div>
+    
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Conoce mas sobre nosotros!</h3>
+        <p>Descubre todo lo que tenemos para ofrecerte. Nuestro servicio de IPTV te brinda acceso a una gran variedad de canales y contenido exclusivo a un precio accesible. ¡No te pierdas esta oportunidad! Haz clic aquí para conocer más sobre nosotros.</p>
+        <a href="#services" class="btn">Conoce mas...</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+<h1 class="heading"> Nuestros <span>servicios</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <span>01</span>
+        <i class="fas fa-server"></i>
+        <h3>Servidores al 100%</h3>
+        <p>Conéctate sin interrupciones. Nuestros servidores te garantizan una conexión estable y veloz en todo momento.</p>
+    </div>
+
+    <div class="box">
+        <span>02</span>
+        <i class="fas fa-mobile"></i>
+        <h3>Adaptivo</h3>
+        <p>Disfruta en cualquier dispositivo. Nuestro servicio de IPTV se adapta a tus necesidades para que puedas ver tu contenido favorito en cualquier dispositivo.</p>
+    </div>
+
+    <div class="box">
+        <span>03</span>
+        <i class="fas fa-photo-video"></i>
+        <h3>Buscamos ofrecer la mejor calidad de video</h3>
+        <p>Calidad de video sin compromisos. Disfruta de una imagen nítida y definida con nuestro servicio de IPTV.</p>
+    </div>
+
+    <div class="box">
+        <span>04</span>
+        <i class="fas fa-bullhorn"></i>
+        <h3>Aviso de Novedades</h3>
+        <p>Siempre al día. Mantente informado sobre nuestras últimas novedades y mejoras en nuestro servicio de IPTV.</p>
+    </div>
+
+
+
+    <div class="box">
+        <span>05</span>
+        <i class="fas fa-headset"></i>
+        <h3>Servicio 24/7</h3>
+        <p>Disponible siempre para ti. Nuestro servicio de atención al cliente está disponible las 24 horas del día, los 7 días de la semana.</p>
+    </div>
+
+</div>
+       <section class="pricing" id="pricing">
+
+    <h1 class="heading"> Nuestros <span>precios</span> </h1>
+
+    <div class="box-contanier">
+
+        <div class="box">
+            <span class="fas fa-paper-plane"></span>
+            <h3>Plan Mensual</h3>
+            <div class="price"> <i>$</i>10 Dolares<i>/</i> </div>
+            <ul>
+                <li> <i class="fas fa-check"></i> 3 Dispositivos </li>
+                <li> <i class="fas fa-check"></i> Mas de 3000 canales </li>
+                <li> <i class="fas fa-check"></i> Mas de 30000 peliculas </li>
+                <li> <i class="fas fa-check"></i> Mas de 4500 series </li>
+                <li> <i class="fas fa-check"></i> Canales deportivos </li>
+                <li> <i class="fas fa-check"></i> Canales Infantiles </li>
+                <li> <i class="fas fa-check"></i> Canales y Peliculas para Adultos </li>
+                <li> <i class="fas fa-check"></i> Canales 24/7 </li>
+                <li> <i class="fas fa-check"></i> Soporte 24/7 </li>
+            </ul>
+            <a href="https://wa.link/dvwwhb" class="btn">Obtener Plan</a>
+        </div>
+
+        <div class="box">
+            <span class="fas fa-plane"></span>
+            <h3>Plan de 3 Meses</h3>
+            <div class="price"> <i>$</i>25 Dolares<i></i> </div>
+            <ul>
+                <li> <i class="fas fa-check"></i> 3 Dispositivos </li>
+                <li> <i class="fas fa-check"></i> Mas de 3000 canales </li>
+                <li> <i class="fas fa-check"></i> Mas de 30000 peliculas </li>
+                <li> <i class="fas fa-check"></i> Mas de 4500 series </li>
+                <li> <i class="fas fa-check"></i> Canales deportivos </li>
+                <li> <i class="fas fa-check"></i> Canales Infantiles </li>
+                <li> <i class="fas fa-check"></i> Canales y Peliculas para Adultos </li>
+                <li> <i class="fas fa-check"></i> Canales 24/7 </li>
+                <li> <i class="fas fa-check"></i> Soporte 24/7 </li>
+            </ul>
+            <a href="https://wa.link/dvwwhb" class="btn">Obtener Plan</a>
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+
+<!-- services section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+    <h1 class="heading"> Eventos <span>Deportivos</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/deportes1.jpeg" alt="">
+            <div class="content">
+                <h3>Gran premio Australia</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/deportes2.jpeg" alt="">
+            <div class="content">
+                <h3>Todos los partidos de la copa del rey</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/deportes3.jpeg" alt="">
+            <div class="content">
+                <h3>Todos los partidos de la Conmebol</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/deportes4.jpeg" alt="">
+            <div class="content">
+                <h3>Copa Italia</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/WhatsApp Image 2023-04-08 at 8.38.02 PM.jpeg" alt="">
+            <div class="content">
+                <h3>Bundesliga</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/WhatsApp Image 2023-04-08 at 8.38.02 PM (1).jpeg" alt="">
+            <div class="content">
+                <h3>Premier League</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="gallery" id="gallery">
+
+    <h1 class="heading"> Series del <span>Momento</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/serie1.jpg" alt="">
+            <div class="content">
+                <h3>Band of Brothers</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/serie2.jpg" alt="">
+            <div class="content">
+                <h3>Stranger Things</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/serie3.jpg" alt="">
+            <div class="content">
+                <h3>Breaking Bad</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/serie4.jpg" alt="">
+            <div class="content">
+                <h3>The Wire</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/serie5.jpg" alt="">
+            <div class="content">
+                <h3>The Night Manager</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/serie6.jpg" alt="">
+            <div class="content">
+                <h3>The Last of Us</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="gallery" id="gallery">
+
+    <h1 class="heading"> Nuestros <span>Estrenos</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/g-1.jpeg" alt="">
+            <div class="content">
+                <h3>Mario Bros</h3>
+            </div>
+        </div>
+    
+        <div class="box">
+            <img src="images/sh.jpeg" alt="">
+            <div class="content">
+                <h3>Shazam</h3>
+            </div>
+        </div>
+    
+        <div class="box">
+            <img src="images/jhon.jpeg" alt="">
+            <div class="content">
+                <h3>John Wick 4</h3>
+            </div>
+        </div>
+    
+        <div class="box">
+            <img src="images/quan.jpeg" alt="">
+            <div class="content">
+                <h3>Quantumania</h3>
+            </div>
+        </div>
+    
+        <div class="box">
+            <img src="images/g-3.jpeg" alt="">
+            <div class="content">
+                <h3>Dungeons & Dragons</h3>
+            </div>
+        </div>
+    
+        <div class="box">
+            <img src="images/g-2.jpeg" alt="">
+            <div class="content">
+                <h3>Adam Driver</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- pricing section starts  -->
+
+
+
+<!-- pricing section ends -->
+
+<!-- review section starts  -->
+
+
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="#services"> <i class="fas fa-chevron-right"></i> services </a>
+            <a href="#gallery"> <i class="fas fa-chevron-right"></i> gallery </a>
+            <a href="#pricing"> <i class="fas fa-chevron-right"></i> pricing </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/profile.php?id=100091877250644"> <i class="fab fa-facebook-f"></i> facebook </a>
+        </div>
+
+        <div class="box">
+            <h3>Descargar App</h3>
+            <a href="https://www.iptvsmarters.com/download/?download=windows_app"> <i class="fab fa-windows"></i> windows </a>
+            <a href="https://apps.apple.com/in/app/smarters-player-lite/id1628995509"> <i class="fab fa-apple"></i> app store </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nathnetwork.xciptv"> <i class="fab fa-google-play"></i> play store </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> &copy; copyright @ 2023 by <span>IPTV HN</span> </div>
+
+</section>
+
+      <script>
+       let menuBtn = document.querySelector('#menu-btn');
+let searchBtn = document.querySelector('#search-btn');
+let colorBtn = document.querySelector('#color-btn');
+let themeBtn = document.querySelector('#theme-btn');
+
+let navbar = document.querySelector('.navbar');
+let searchForm = document.querySelector('.search-form');
+let colorsPalette = document.querySelector('.colors-palette');
+
+menuBtn.onclick = () =>{
+  navbar.classList.toggle('active');
+  searchForm.classList.remove('active');
+  colorsPalette.classList.remove('active');
+}
+
+colorBtn.onclick = () =>{
+  colorsPalette.classList.toggle('active');
+  navbar.classList.remove('active');
+  searchForm.classList.remove('active');
+}
+
+window.onscroll = () =>{
+  navbar.classList.remove('active');
+  searchForm.classList.remove('active');
+  colorsPalette.classList.remove('active');
+}
+
+document.querySelectorAll('.colors-palette .color').forEach(btn =>{
+  btn.onclick = () =>{
+    let color = btn.style.background;
+    document.querySelector(':root').style.setProperty('--main-color',color);
+  }
+});
+
+themeBtn.onclick = () => {
+  themeBtn.classList.toggle('fa-sun');
+  if(themeBtn.classList.contains('fa-sun')){
+    document.body.classList.add('active');
+  }else{
+    document.body.classList.remove('active');
+  }
+}
+</script> 
+
+<!-- footer section ends -->
